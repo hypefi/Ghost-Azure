@@ -43,12 +43,9 @@
         }
 
         // append contents
-        var postElements = this.response.querySelectorAll('article.post-card');
+        var postElements = this.response.querySelectorAll('.post-card');
         postElements.forEach(function (item) {
-            // document.importNode is important, without it the item's owner
-            // document will be different which can break resizing of
-            // `object-fit: cover` images in Safari
-            feedElement.appendChild(document.importNode(item, true));
+            feedElement.appendChild(item);
         });
 
         // set next link
